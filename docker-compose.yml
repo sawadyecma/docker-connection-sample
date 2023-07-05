@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  todo-db:
+    image: postgres:14.5
+    container_name: postgres-todo
+    ports:
+      - 15432:5432
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: dbpswd
+      POSTGRES_INIT_DB: '--encoding=UTF-8'
+    hostname: psql-todo
+    restart: always
+    user: root
